@@ -2,26 +2,40 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
 
-## Development server
+This is an Angular i18n test.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internationalization
 
-## Code scaffolding
+## 1. Add Angular i18n module
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng add @angular/localize
 
-## Build
+## 2. In the component add the i18n attribute. It may include meaning|description@@id
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<article>
+  <h1 i18n="Card Header|Title for the under construction card@@constructionHeader">Under Construction!</h1>
+  <p i18n="Card Descritpion|A description for the under construction card.@@constructionDescription">This page is under construction.</p>
+</article>
 
-## Running unit tests
+## 3. Update package.json with extract script
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "start:es": "ng serve --configuration=es",
+    "build": "ng build",
+    "build:es": "ng build --configuration=es",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    /* Add extract script */
+    "extract": "ng xi18n --output-path src/locale"
+  }
 
-## Running end-to-end tests
+## 4. Run extract script. A new file will be created: src/locale/messages.xlf
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+npm run extract
 
-## Further help
+## 5. Copy src/locale/messages.xlf to src/locale/messages.es.xlf and add a <target> under each <source>  like this:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<source>Under Construction!</source>
+<target>¡En construcción!</target>
