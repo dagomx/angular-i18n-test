@@ -28,8 +28,7 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       "build:es": "ng build --configuration=es",
       "watch": "ng build --watch --configuration development",
       "test": "ng test",
-      /* Add extract script */
-      "extract": "ng xi18n --output-path src/locale"
+      **"extract": "ng xi18n --output-path src/locale"**
     }
 
 ## 4. Run extract script. A new file will be created: src/locale/messages.xlf
