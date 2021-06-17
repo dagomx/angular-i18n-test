@@ -10,7 +10,7 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
 
     ng add @angular/localize
 
-## 2. In the component add the i18n attribute. It may include meaning|description@@id
+### 2. In the component add the i18n attribute. It may include meaning|description@@id
 
 
     <article>
@@ -18,7 +18,7 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       <p i18n="Card Descritpion|A description for the under construction card.@@constructionDescription">This page is under construction.</p>
     </article>
 
-## 3. Update package.json with extract script
+### 3. Update package.json with extract script
 
     "scripts": {
       "ng": "ng",
@@ -31,16 +31,16 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       "extract": "ng xi18n --output-path src/locale"
     }
 
-## 4. Run extract script. A new file will be created: src/locale/messages.xlf
+### 4. Run extract script. A new file will be created: src/locale/messages.xlf
 
     npm run extract
 
-## 5. Copy src/locale/messages.xlf to src/locale/messages.es.xlf. In src/locale/messages.es.xlf add a <target> under each <source>  like this:
+### 5. Copy src/locale/messages.xlf to src/locale/messages.es.xlf. In src/locale/messages.es.xlf add a <target> under each <source>  like this:
 
     <source>Under Construction!</source>
     <target>¡En construcción!</target>
 
-## 6. Create spanish build. In angular.json file:
+### 6. Create spanish build. In angular.json file:
 
     {
       "projects": {
@@ -62,7 +62,7 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       // ...
     }
 
-## 7. In angular.json, create configuration settings for es under build:
+### 7. In angular.json, create configuration settings for es under build:
 
     {
       "projects": {
@@ -88,7 +88,7 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       // ...
     }
 
-## 8. Update the configuration settings under serve
+### 8. Update the configuration settings under serve
 
     {
       "projects": {
@@ -112,7 +112,7 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       // ...
     }
 
-## 9. Finally we can add a serve and build scripts in package.json
+### 9. Finally we can add a serve and build scripts in package.json
 
     {
       "scripts": {
