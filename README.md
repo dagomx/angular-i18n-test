@@ -6,7 +6,7 @@ This is an Angular i18n test.
 
 Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internationalization
 
-## 1. Add Angular i18n module
+### 1. Add Angular i18n module
 
     ng add @angular/localize
 
