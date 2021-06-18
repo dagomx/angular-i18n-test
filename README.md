@@ -118,9 +118,9 @@ Full tutorial: https://www.digitalocean.com/community/tutorials/angular-internat
       "scripts": {
         "ng": "ng",
         "start": "ng serve",
-        "start:fr": "ng serve --configuration=es",
+        "start:es": "ng serve --configuration=es",
         "build": "ng build",
-        "build:fr": "ng build --configuration=es",
+        "build:es": "ng build --configuration=es",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
